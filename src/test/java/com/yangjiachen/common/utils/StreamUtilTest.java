@@ -12,7 +12,9 @@ package com.yangjiachen.common.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -28,6 +30,21 @@ public class StreamUtilTest {
 	 * Test method for {@link com.yangjiachen.common.utils.StreamUtil#closeAll(java.io.Closeable[])}.
 	 * @throws Exception 
 	 */
+	
+	
+	@Test
+	public void testReadLine() {
+		try {
+			List<String> list = StreamUtil.readLine(new FileInputStream("C:\\Users\\丑小鸭\\Desktop\\开发文档\\Java获取当前系统的信息.txt"));
+			for (String string : list) {
+				System.out.println(string);
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Test
 	public void testCloseAll() throws Exception {
 		InputStream is = new FileInputStream("C:\\Users\\丑小鸭\\Desktop\\开发文档\\aaa.txt");

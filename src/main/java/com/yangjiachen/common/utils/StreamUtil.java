@@ -10,12 +10,16 @@
  */
 package com.yangjiachen.common.utils;
 
+import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /** 
@@ -29,6 +33,23 @@ public class StreamUtil {
 		* 方法1：批量关闭流，参数能传无限个。(3分)
 		* 例如传入FileInputStream对象、JDBC中Connection对象都可以关闭。
 	*/
+	
+	//整行读取
+	public static List<String> readLine(InputStream is){
+		BufferedReader br = new BufferedReader(new InputStreamReader(is));
+		List<String> list = new ArrayList<String>();
+		String str = "";
+		try {
+			while((str=br.readLine())!=null) {
+				list.add(str);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 									//可变参数
 	public static void closeAll(Closeable ... closeables){
 		//判断传入的参数是否有值
