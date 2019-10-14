@@ -95,5 +95,11 @@ public class StringUtil {
 		String string = randomChineseString(RandomUtil.random(1, 2));
 		return str+string;
 	}
+	
+	//方法5，  判断字符串是否是数字类型
+	public static boolean isNumber(String str) {
+		String reg = "^[0-9]+(\\.[0-9]+)?$";
+		return str.matches(reg);
+	}
 
 }

@@ -64,4 +64,12 @@ public class DateUtilTest {
 		String sql1 = sql.replace("{1}", sf.format(date2)).replace("{2}", sf.format(date));
 		System.out.println(sql1);
 	}
+	
+	@Test
+	public void testGetAge() {
+		Calendar c = Calendar.getInstance();
+		c.set(1997, 9, 14);
+		int age = DateUtil.getAge(c.getTime());
+		System.out.println(age);
+	}
 }

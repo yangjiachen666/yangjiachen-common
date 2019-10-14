@@ -37,7 +37,7 @@ public class StringUtilTest {
 	 */
 	@Test
 	public void testHasText() {
-		String str="aaa";
+		String str=" ";
 		boolean b = StringUtil.hasText(str);
 		System.out.println(b);
 	}
@@ -58,6 +58,13 @@ public class StringUtilTest {
 	public void testGenerateChineseName() {
 		String generateChineseName = StringUtil.generateChineseName();
 		System.out.println(generateChineseName);
+	}
+	
+	@Test
+	public void testIsNumber() {
+		String str = "0.999";
+		boolean b = StringUtil.isNumber(str);
+		System.out.println(b);
 	}
 
 }

@@ -20,10 +20,6 @@ import java.util.Date;
  * @date: 2019年10月11日 下午1:12:55  
  */
 public class DateUtil {
-	
-	public static void main(String[] args) {
-		
-	}
 	/**
 	 * 
 	 * @Title: initDate 
@@ -69,5 +65,31 @@ public class DateUtil {
 		c.add(Calendar.SECOND, -1);
 		//日历类中的date
 		return c.getTime();
+	}
+	
+	//根据生日计算年龄
+	public static int getAge(Date birthday) {
+		//获取系统当前时间的年月日
+		Calendar c = Calendar.getInstance();
+		int yearNew = c.get(Calendar.YEAR);
+		int monthNew = c.get(Calendar.MONTH);
+		int dayNew = c.get(Calendar.DAY_OF_MONTH);
+		
+		//获取生日的年月日
+		c.setTime(birthday);
+		int yearOld = c.get(Calendar.YEAR);
+		int monthOld = c.get(Calendar.MONTH);
+		int dayOld = c.get(Calendar.DAY_OF_MONTH);
+		//当前年份减去生日年份则为年龄
+		int age = yearNew-yearOld;
+		//如果当前月份大于生日月份，说明还没有过生日,则年龄-1
+		if(monthNew>monthOld) {
+			age--;
+		}
+		//如果当前日期大于生日日期,说明还没有过生日,则年龄-1
+		if(monthNew==monthOld && dayNew>dayOld) {
+			age--;
+		}
+		return age;
 	}
 }
