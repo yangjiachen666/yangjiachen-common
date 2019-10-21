@@ -83,11 +83,11 @@ public class DateUtil {
 		//当前年份减去生日年份则为年龄
 		int age = yearNew-yearOld;
 		//如果当前月份大于生日月份，说明还没有过生日,则年龄-1
-		if(monthNew>monthOld) {
+		if(monthOld>monthNew) {
 			age--;
 		}
 		//如果当前日期大于生日日期,说明还没有过生日,则年龄-1
-		if(monthNew==monthOld && dayNew>dayOld) {
+		if(monthNew==monthOld && dayOld>dayNew) {
 			age--;
 		}
 		return age;

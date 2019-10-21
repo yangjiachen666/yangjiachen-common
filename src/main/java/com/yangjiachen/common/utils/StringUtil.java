@@ -11,7 +11,11 @@
 package com.yangjiachen.common.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
+import java.util.Set;
 
 /**
  * @ClassName: StringUtil
@@ -101,5 +105,5 @@ public class StringUtil {
 		String reg = "^[0-9]+(\\.[0-9]+)?$";
 		return str.matches(reg);
 	}
-
+	
 }
