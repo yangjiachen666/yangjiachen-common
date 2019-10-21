@@ -70,4 +70,10 @@ public class StringUtilTest {
 		boolean b = StringUtil.isNumber(str);
 		System.out.println(b);
 	}
+	
+	@Test
+	public void testPercent() {
+		String percent = StringUtil.percent(2, 5);
+		System.out.println(percent);
+	}
 }

@@ -11,6 +11,7 @@
 package com.yangjiachen.common.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -106,4 +107,11 @@ public class StringUtil {
 		return str.matches(reg);
 	}
 	
+	//方法6: 传入两个数值,输出所占百分比
+	public static String percent(Integer i,Integer j) {
+		NumberFormat instance = NumberFormat.getInstance();
+		instance.setMaximumFractionDigits(0);
+		String format = instance.format((float)i/(float)j*100);
+		return format;
+	}
 }
