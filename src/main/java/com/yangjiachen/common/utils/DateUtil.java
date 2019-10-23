@@ -92,4 +92,11 @@ public class DateUtil {
 		}
 		return age;
 	}
+	
+	//计算当前时间前一天的时间
+	public static Date getDateByBefore() {
+		Calendar c = Calendar.getInstance();
+		c.add(Calendar.DAY_OF_MONTH, -1);
+		return c.getTime();
+	}
 }

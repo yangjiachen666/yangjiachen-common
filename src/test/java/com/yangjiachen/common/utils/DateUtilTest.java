@@ -72,4 +72,12 @@ public class DateUtilTest {
 		int age = DateUtil.getAge(c.getTime());
 		System.out.println(age);
 	}
+	
+	@Test
+	public void testDateByBefore() {
+		Date date = DateUtil.getDateByBefore();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String format = sf.format(date);
+		System.out.println(format);
+	}
 }
