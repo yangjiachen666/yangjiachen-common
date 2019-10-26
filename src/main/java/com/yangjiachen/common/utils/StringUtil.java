@@ -114,4 +114,8 @@ public class StringUtil {
 		String format = instance.format((float)i/(float)j*100);
 		return format;
 	}
+	//方法7,将字符串内前后空格去掉,内容全部转换为小写.将中间的空格替换成-
+	public static String toUniqueName(String str) {
+		return str.toLowerCase().trim().replaceAll(" ", "-");
+	}
 }

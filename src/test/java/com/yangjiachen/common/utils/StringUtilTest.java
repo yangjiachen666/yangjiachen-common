@@ -76,4 +76,12 @@ public class StringUtilTest {
 		String percent = StringUtil.percent(2, 5);
 		System.out.println(percent);
 	}
+	
+
+	@Test
+	public void testToUniqueName() {
+		String str = "Spring mvc";
+		String percent = StringUtil.toUniqueName(str);
+		System.out.println(percent);
+	}
 }
