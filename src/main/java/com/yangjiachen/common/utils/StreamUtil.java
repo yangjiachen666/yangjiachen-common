@@ -29,10 +29,7 @@ import java.util.List;
  * @date: 2019年10月11日 下午1:13:19  
  */
 public class StreamUtil {
-	/**
-		* 方法1：批量关闭流，参数能传无限个。(3分)
-		* 例如传入FileInputStream对象、JDBC中Connection对象都可以关闭。
-	*/
+	
 	
 	//整行读取
 	public static List<String> readLine(InputStream is){
@@ -49,7 +46,10 @@ public class StreamUtil {
 		}
 		return list;
 	}
-	
+	/**
+	* 方法1：批量关闭流，参数能传无限个。(3分)
+	* 例如传入FileInputStream对象、JDBC中Connection对象都可以关闭。
+	*/
 									//可变参数
 	public static void closeAll(Closeable ... closeables){
 		//判断传入的参数是否有值
