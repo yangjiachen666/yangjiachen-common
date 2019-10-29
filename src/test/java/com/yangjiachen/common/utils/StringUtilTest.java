@@ -78,4 +78,11 @@ public class StringUtilTest {
 		String percent = StringUtil.toUniqueName(str);
 		System.out.println(percent);
 	}
+	
+	@Test
+	public void testisHttpUrl() {
+		String url ="https://www.baidu.com";
+		boolean httpUrl = StringUtil.isHttpUrl(url);
+		System.out.println(httpUrl);
+	}
 }

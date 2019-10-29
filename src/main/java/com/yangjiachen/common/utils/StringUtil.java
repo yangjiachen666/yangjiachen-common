@@ -10,7 +10,9 @@
  */
 package com.yangjiachen.common.utils;
 
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -117,5 +119,23 @@ public class StringUtil {
 	//方法7,将字符串内前后空格去掉,内容全部转换为小写.将中间的空格替换成-
 	public static String toUniqueName(String str) {
 		return str.toLowerCase().trim().replaceAll(" ", "-");
+	}
+	/**
+	 * 方法8
+	 * 校验传入的参数是否为url
+	 * @param param
+	 * @return
+	 */
+	public static boolean isHttpUrl(String param) {
+		 URL url;  
+		 try {  
+	         url = new URL(param);  
+	         InputStream in = url.openStream();  
+	         return true; 
+	    } catch (Exception e1) {  
+	         System.out.println("连接打不开!");  
+	         url = null;  
+	    }  
+		 return false;
 	}
 }
